@@ -1,0 +1,48 @@
+<project default="main">
+	<property file="build.properties"/>
+	<target name="main">
+		<property name="deltapack" value="c:/data/lib/deltapack-3.5.2/eclipse"/>
+		<property name="myroot" value="C:\Users\IBM_ADMIN\Desktop\AccProbe\org.a11y.utils.accprobe"/>
+		<property name="eclipse.home" value="C:/Program Files (x86)/IBM/TeamConcert" />
+		<property name="eclipse.pdebuild.home" value="C:/Apps/IBM/IBMIMShared/plugins/org.eclipse.pde.build_3.5.2.R35x_20100114" />
+<!--
+		<property name="eclipse.pdebuild.home" value="${eclipse.home}/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203" />
+-->
+		<property name="eclipse.pdebuild.scripts" value="${eclipse.pdebuild.home}/scripts" />
+		<property name="eclipse.pdebuild.templates" value="${eclipse.pdebuild.home}/templates" />
+		<property name="buildDirectory" value="${myroot}/temp.build"/>
+		<property name="eclipseBaseURL" value="file://${eclipse.home}"/>
+		<property name="product" value="${myroot}/accprobe.product"/>
+		<property name="archivePrefix" value="accprobe"/>
+		<property name="buildId" value="accprobe"/>
+
+		<property name="baseLocation" value="${eclipse.home}"/>
+  		<property name="skipBase" value="true"/>
+  	 	<property name="skipMaps" value="true"/>
+  	  	<property name="skipFetch" value="true"/>
+  		<property name="configs" value="win32,win32,x86" />
+
+		<!-- Check that we have a deltapack -->
+		<available property="haveDeltaPack" file="${deltapack}"/>
+		<fail unless="haveDeltaPack" message="The deltapack is required to build this product.  Please edit buildProduct.xml or set the &quot;deltapack&quot; property." />
+			
+		<property name="builder" value="${basedir}" />
+		<!--<property name="buildDirectory" value="${basedir}/buildDirectory"/>-->
+		<property name="pluginPath" value="${basedir}/..${path.separator}${deltapack}" />
+		<property name="buildTempFolder" value="${buildDirectory}" />
+		<property name="p2.gathering" value="true"/>
+		<property name="p2.metadata.repo" value="file:${buildDirectory}/repository"/>
+		<property name="p2.artifact.repo" value="file:${buildDirectory}/repository"/>
+		
+		<ant antfile="${eclipse.pdebuild.scripts}/productBuild/productBuild.xml" />
+
+		<move todir="${basedir}/Delivery">
+			<fileset dir="${buildDirectory}/${buildLabel}" includes="*.zip"/>
+		</move>
+        <delete dir="${buildDirectory}"/>
+
+		<!-- refresh the workspace -->
+		<eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
+		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+	</target>
+</project>

@@ -1,0 +1,64 @@
+<project name="get dependent zips/tar.gz files for building plugin projects" default="getBaseInit" basedir=".">
+	<target name="getBaseInit">
+		<!-- see plugins/org.eclipse.build.tools/buildTools.jar!/org/eclipse/releng/VersionNumberStripper.class -->
+		<taskdef name="stripVersions" classname="org.eclipse.releng.VersionNumberStripper" />
+		<property file="${buildDirectory}/maps/org.a11y.${subprojectName2}/build.cfg" />
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- see getDependenciesHelper.xml for referenced targets                  -->
+	<!-- ===================================================================== -->
+	
+	<target name="getDependency" depends="getBaseInit">
+		<property name="getDependenciesHelper.xml" value="${buildDirectory}/../org.a11y.utils.accprobe.releng/scripts/getDependenciesHelper.xml"/>
+		<!-- 1. download -->
+		<ant antfile="${getDependenciesHelper.xml}" target="getBundle" />
+		<!-- 2. unpack -->
+		<ant antfile="${getDependenciesHelper.xml}" target="unpackBundle"><property name="unpackDest" value="${buildDirectory}/.."/></ant>
+		<!-- 3. strip versions from plugins -->
+		<stripVersions directory="${buildDirectory}/plugins" />
+		<!-- 4. unpack doc.isv -->
+		<antcall target="unpackDocISV"/>
+	</target>
+
+	<target name="unpackDocISV">
+		<!-- 4. for the eclipse case, do this extra step: extract doc.zip so we can create links in the java doc -->
+		<available property="jarExists" file="${buildDirectory}/plugins/org.eclipse.platform.doc.isv.jar"/>
+		<available property="isUnpacked" file="${buildDirectory}/plugins/org.eclipse.platform.doc.isv/plugin.xml"/>
+		<ant antfile="${getDependenciesHelper.xml}" target="unpackJar">
+			<property name="theJar" value="${buildDirectory}/plugins/org.eclipse.platform.doc.isv.jar"/>
+			<property name="theDir" value="${buildDirectory}/plugins/org.eclipse.platform.doc.isv"/>
+		</ant>
+	</target>
+	
+	<!-- unpack emf.examples plugin since actual code is nested inside the jar and can't be found by javac -->
+	<target name="massagePluginJar">
+		<!-- requires the following params to be set -->
+		<!--
+			<property name="theJar"/> [name of the jar, eg., org.eclipse.emf.examples.library.editor.jar]
+			<property name="theDir"/> [local dir where the plugin jar can be found, eg., ${buildDirectory}/plugins/]
+    	-->
+		<property name="tmp.dir" location="${buildDirectory}/${theJar}.tmp"/>
+		<mkdir dir="${tmp.dir}"/>
+		<!-- 1. unzip ${theJar} to temp location -->
+		<unzip dest="${tmp.dir}" src="${theDir}/${theJar}" overwrite="true"/>
+		<!-- 2. unzip (internal) *.jar - only unpack *.class -->
+		<unzip dest="${tmp.dir}">
+		    <patternset>
+		        <include name="**/*.class"/>
+		    </patternset>
+		    <fileset dir="${tmp.dir}">
+		        <include name="**/*.jar"/>
+		    </fileset>
+		</unzip>
+		<!-- 3. delete (internal) *.jar -->
+		<delete>
+			<fileset dir="${tmp.dir}" includes="**/*.jar"/>
+		</delete>
+		<!-- 4. repack resulting files as old ${theJar} file -->
+		<zip destfile="${theDir}/${theJar}">
+			<zipfileset dir="${tmp.dir}" prefix=""/>
+		</zip>
+		<delete dir="${tmp.dir}"/>
+	</target>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+
+   <extension-point id="accservices" name="Accessibility Service" schema="schema/accservices.exsd"/>
+   <extension point="org.a11y.utils.accprobe.accservice.accservices">
+ 
+   </extension>
+   
+</plugin>

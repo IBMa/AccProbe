@@ -1,0 +1,10 @@
+<project default="getZip" basedir=".">
+<target name="getZip">
+	<available file="${downloadsDir}/${theFile}" property="zipExists"/>
+	<antcall target="downloadZip" />
+</target>
+<target name="downloadZip" unless="zipExists">
+	<get src="${theURL}" dest="${downloadsDir}/${theFile}" usetimestamp="true"/>
+	<touch file="${downloadsDir}/${theFile}"/>
+</target>
+</project>

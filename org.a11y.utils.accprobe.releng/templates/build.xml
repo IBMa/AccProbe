@@ -1,0 +1,31 @@
+<project default="main">
+
+	<!-- should point to productBuild.xml for a product -->
+	<property name="pde.build.scripts" value="../org.eclipse.releng.basebuilder/plugins/org.eclipse.pde.build_3.4.1.R34x_v20080805/scripts" />
+
+	<target name="init">
+		<tstamp/>
+		<touch file="${user.home}/.cvspass" />
+		<property name="timestamp" value="${DSTAMP}${TSTAMP}" />
+		<property name="buildDirectory" value="${basedir}/src/${archivePrefix}" />
+
+		<property name="buildType" value="I" />
+		<property name="buildId" value="${buildType}${timestamp}" />
+		
+		<!-- Verify buildDirectory ends with archivePrefix. -->
+		<property name="fullBuild" location="${buildDirectory}"/>
+		<basename file="${fullBuild}" property="lastSeg"/>
+		<condition property="endsWithArchivePrefix">
+			<equals arg1="${lastSeg}" arg2="${archivePrefix}"/>
+		</condition>
+		<fail message="buildDirectory's last segment is not ${archivePrefix}." unless="endsWithArchivePrefix"/>
+	</target>
+
+	<target name="main" depends="init">
+		<!-- should point to productBuild.xml for a product -->
+		<ant antfile="build.xml" dir="${pde.build.scripts}">
+			<property name="builder" value="${basedir}/${component}" />
+		</ant>
+	</target>
+	
+</project>

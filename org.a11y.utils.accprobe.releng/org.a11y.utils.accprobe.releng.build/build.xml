@@ -1,0 +1,18 @@
+<project name="org.a11y.utils.accprobe.releng.build" basedir="." default="build">
+  <property name="jarName" value="a11y-releng-build.jar"/>
+  <property name="workDir" value="temp.folder"/>
+  
+  <target name="build">
+    <delete file="${jarName}"/>
+    <delete dir="${workDir}"/>
+    <mkdir dir="${workDir}"/>
+    
+    <javac sourcepath="" srcdir="src" destdir="${workDir}" deprecation="off" source="1.5" target="1.5">
+      <classpath>
+      </classpath>
+    </javac>
+
+    <jar destfile="${jarName}" basedir="${workDir}"/>
+  	<delete dir="temp.folder"/>
+  </target>
+</project>

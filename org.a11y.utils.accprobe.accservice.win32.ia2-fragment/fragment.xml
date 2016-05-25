@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<fragment>
+   <extension
+         point="org.a11y.utils.accprobe.core.modelTypes">
+      <model
+            basetype="org.a11y.utils.accprobe.accservice.win32.ia2.IA2Accessible"
+            class="org.a11y.utils.accprobe.accservice.core.win32.ia2.IA2GuiModel"
+            id="org.a11y.utils.accprobe.accservice.win32.ia2"
+            name="ia2">
+      </model>
+   </extension>
+   <extension
+         point="org.a11y.utils.accprobe.accservice.accservices">
+      <accservice
+            class="org.a11y.utils.accprobe.accservice.core.win32.ia2.IA2AccessibilityService"
+            id="org.a11y.utils.accprobe.accservice.ia2"
+            name="ia2">
+      </accservice>
+   </extension>
+
+
+</fragment>

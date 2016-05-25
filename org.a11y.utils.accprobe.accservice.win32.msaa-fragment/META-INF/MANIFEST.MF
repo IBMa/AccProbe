@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %fragmentName
+Bundle-SymbolicName: org.a11y.utils.accprobe.accservice.win32.msaa;singleton:=true
+Bundle-Version: 1.2.0
+Bundle-Vendor: %providerName
+Bundle-Localization: fragment
+Bundle-ClassPath: a11y-accservice-msaa.jar
+Fragment-Host: org.a11y.utils.accprobe.accservice;bundle-version="1.2.0"
+Export-Package: org.a11y.utils.accprobe.accservice.adapt.win32.msaa;uses:="org.a11y.utils.accprobe.core.adapt",
+ org.a11y.utils.accprobe.accservice.core.win32.msaa;
+  uses:="org.a11y.utils.accprobe.core.model.events,
+   org.a11y.utils.accprobe.accservice.event,
+   org.a11y.utils.accprobe.accservice,
+   org.a11y.utils.accprobe.core.model,
+   org.a11y.utils.accprobe.core.model.locate,
+   org.a11y.utils.accprobe.accservice.core"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+

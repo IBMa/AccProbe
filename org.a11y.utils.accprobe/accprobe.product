@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Accessibility Probe" uid="accprobe" id="org.a11y.utils.accprobe.product" application="org.a11y.utils.accprobe.application" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="product_lg.gif"/>
+      <text>
+         %aboutText
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="accprobe">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="org.apache.commons.collections"/>
+   </plugins>
+
+   <features>
+      <feature id="org.a11y.utils.accprobe" version="1.2.0.qualifier"/>
+      <feature id="org.eclipse.rcp" version="3.5.2.R35x_v20100119-9SA0FxwFnoCU5XxWItFdXXb27BA6"/>
+   </features>
+
+
+</product>

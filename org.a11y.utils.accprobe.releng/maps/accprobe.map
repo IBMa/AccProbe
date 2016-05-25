@@ -1,0 +1,12 @@
+!***************  PROJECT CONTRIBUTION  ******************************************************** 
+
+!*** Project's plugins, features and fragments
+
+feature@org.a11y.utils.accprobe=HEAD,:pserver:teegala:ribdev01@ibmac50.austin.ibm.com:/rib,,A11yAccProbe/org.a11y.utils.accprobe-feature
+
+plugin@org.a11y.utils.accprobe=HEAD,:pserver:teegala:ribdev01@ibmac50.austin.ibm.com:/rib,,A11yAccProbe/org.a11y.utils.accprobe
+plugin@org.a11y.utils.accprobe.core=HEAD,:pserver:teegala:ribdev01@ibmac50.austin.ibm.com:/rib,,A11yAccProbe/org.a11y.utils.accprobe.core
+plugin@org.a11y.utils.accprobe.accservice=HEAD,:pserver:teegala:ribdev01@ibmac50.austin.ibm.com:/rib,,A11yAccProbe/org.a11y.utils.accprobe.accservice
+
+fragment@org.a11y.utils.accprobe.accservice.win32.ia2=HEAD,:pserver:teegala:ribdev01@ibmac50.austin.ibm.com:/rib,,A11yAccProbe/org.a11y.utils.accprobe.accservice.win32.ia2-fragment
+fragment@org.a11y.utils.accprobe.accservice.win32.msaa=HEAD,:pserver:teegala:ribdev01@ibmac50.austin.ibm.com:/rib,,A11yAccProbe/org.a11y.utils.accprobe.accservice.win32.msaa-fragment

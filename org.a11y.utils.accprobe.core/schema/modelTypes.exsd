@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.a11y.utils.accprobe.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.a11y.utils.accprobe.core" id="modelTypes" name="A11Y Model Types"/>
+      </appinfo>
+      <documentation>
+         A11Y uses models to represent various architectures - i.e. Java Swing, DOM, accessibility, etc.  This extension point allows other plug-ins to define new model types.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="model" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  point extended always org.a11y.utils.accprobe.core.model.modelTypes
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="model">
+      <annotation>
+         <documentation>
+            Defines a new model
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  id used to identify this extension (required)
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Name of the model (required).  Used as the unique key when attempting to get an instance of this model.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  implementation of org.a11y.utils.accprobe.core.model.IModel (required)
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.a11y.utils.accprobe.core.model.IModel"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="basetype" type="string" use="required">
+            <annotation>
+               <documentation>
+                  type from which all nodes in this model are expected to inherit (required)
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiInfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         0.3.0
+      </documentation>
+   </annotation>
+
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

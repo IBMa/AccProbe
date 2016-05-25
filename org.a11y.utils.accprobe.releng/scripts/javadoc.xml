@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="javadoc" default="main">
+
+    <property name="htmlDir" value="${doc.plugin}/html"/>
+    <property name="apiDir" value="${htmlDir}/api"/>
+    <property name="packageListFile" value="${doc.plugin}/package-list"/>
+
+    <target name="main" depends="packageList, javadoc, packageToc" description="Builds Plugin Javadoc" />
+
+    <target name="packageList">
+        <property name="taskBuildDir" value="../../org.a11y.utils.accprobe.releng/org.a11y.utils.accprobe.releng.build"/>
+        <ant dir="${taskBuildDir}" target="build"/>
+        
+        <taskdef
+            name="createPackageList"
+            classname="org.a11y.utils.accprobe.releng.build.JavadocPackageListTask"
+            classpath="${taskBuildDir}/a11y-releng-build.jar"
+        />
+        <createPackageList
+            sourceDirectories="${plugin.sourcefolders}"
+            baseDir="${buildDirectory}/plugins"
+            outputFile="${packageListFile}"
+        />
+    </target>
+    
+    <target name="javadoc" depends="packageList, getSkipJavaDocParam" unless="doskipJavaDoc">
+        <mkdir dir="${apiDir}"/>
+        <javadoc
+            author="true"
+            destdir="${apiDir}"
+            doctitle="${api.doc.title}"
+            windowtitle="${api.window.title}"
+            nodeprecated="false"
+            nodeprecatedlist="false"
+            noindex="false"
+            nonavbar="false"
+            notree="false"
+            Encoding="ISO-8859-1"
+            packagenames="org.a11y.*"
+        	sourcepath="${plugin.sourcefolders}"
+            splitindex="true"
+            use="true"
+            version="true"
+            breakiterator="yes"
+            verbose="false"
+            failonerror="false"
+        	useexternalfile="yes">
+        	<classpath>
+                <fileset dir="${buildDirectory}/../eclipse/plugins">
+                    <include name="**/*.jar" />
+                </fileset>
+                <fileset dir="${baseLocation}/plugins">
+                    <include name="**/*.jar" />
+                </fileset>
+                <dirset dir="${buildDirectory}">
+                    <include name="**/@dot/**/*.class" />
+                    <include name="**/bin/**/*" />
+                </dirset>
+            </classpath>
+                        <link href="http://java.sun.com/j2se/1.5.0/docs/api" />
+                        <link href="http://www.jlab.net/eclipse/doc/3.1" />
+        </javadoc>
+    </target>
+
+    <target name="packageToc">
+        <loadfile failonerror="false" property="a11y.packages" srcfile="${packageListFile}">
+            <filterchain>
+                <filterreader classname="org.apache.tools.ant.filters.PrefixLines">
+                    <param name="prefix" value="&lt;/package&gt;&lt;package&gt;" />
+                </filterreader>
+                <striplinebreaks />
+            </filterchain>
+        </loadfile>
+
+        <!-- Create packages.xml file -->
+        <echo file="${doc.plugin}/packages.xml">
+            &lt;packages&gt;&lt;package&gt;${a11y.packages}&lt;/package&gt;&lt;/packages&gt;
+        </echo>
+
+        <xslt basedir="${basedir}" in="${doc.plugin}/packages.xml" out="${doc.plugin}/javadoctoc.xml" style="../../org.a11y.utils.accprobe.releng/scripts/javadocToc.xsl">
+            <outputproperty name="method" value="xml" />
+            <outputproperty name="indent" value="yes" />
+        </xslt>
+    </target>
+    
+    <target name="getSkipJavaDocParam" if="skipJavaDoc">
+        <condition property="doskipJavaDoc">
+            <equals arg1="${skipJavaDoc}" arg2="true" trim="true" casesensitive="false" />
+        </condition>
+    </target>
+    
+</project>

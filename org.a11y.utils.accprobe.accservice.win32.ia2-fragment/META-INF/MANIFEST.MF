@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %fragmentName
+Bundle-SymbolicName: org.a11y.utils.accprobe.accservice.win32.ia2;singleton:=true
+Bundle-Version: 1.2.0
+Bundle-Localization: fragment
+Bundle-ClassPath: a11y-accservice-ia2.jar
+Fragment-Host: org.a11y.utils.accprobe.accservice;bundle-version="1.2.0"
+Export-Package: org.a11y.utils.accprobe.accservice.adapt.win32.ia2;uses:="org.a11y.utils.accprobe.core.adapt",
+ org.a11y.utils.accprobe.accservice.core.win32.ia2;uses:="org.a11y.utils.accprobe.core.model.events,org.a11y.utils.accprobe.accservice,org.a11y.utils.accprobe.accservice.core"
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+
+

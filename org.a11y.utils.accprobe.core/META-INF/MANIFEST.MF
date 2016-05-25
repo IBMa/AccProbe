@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.a11y.utils.accprobe.core;singleton:=true
+Bundle-Version: 1.2.0.qualifier
+Bundle-Activator: org.a11y.utils.accprobe.core.model.ModelPlugin
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.apache.commons.beanutils,
+ org.apache.commons.jxpath
+Eclipse-LazyStart: true
+Export-Package: org.a11y.utils.accprobe.core,
+ org.a11y.utils.accprobe.core.adapt,
+ org.a11y.utils.accprobe.core.config,
+ org.a11y.utils.accprobe.core.logging,
+ org.a11y.utils.accprobe.core.model,
+ org.a11y.utils.accprobe.core.model.events,
+ org.a11y.utils.accprobe.core.model.locate,
+ org.a11y.utils.accprobe.core.model.traverse,
+ org.a11y.utils.accprobe.core.model.traverse.filters,
+ org.a11y.utils.accprobe.core.resources,
+ org.a11y.utils.accprobe.core.runtime
+Bundle-ClassPath: .
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.a11y.utils.accprobe.Application">
+         </run>
+      </application>
+   </extension>
+   
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Accessibility Probe Perspective"
+            class="org.a11y.utils.accprobe.Perspective"
+            id="org.a11y.utils.accprobe.perspective">
+      </perspective>
+   </extension>
+   
+   <extension point="org.eclipse.ui.views">
+       <view
+            name="Explorer"
+            allowMultiple="true"
+            icon="icons/accprobe.gif"
+            class="org.a11y.utils.accprobe.views.ExplorerView"
+            id="org.a11y.utils.accprobe.views.ExplorerView">
+     </view>
+     <view
+            name="Accessibility Properties"
+            allowMultiple="false"
+            icon="icons/properties.gif"
+            class="org.a11y.utils.accprobe.views.PropertiesView"
+            id="org.a11y.utils.accprobe.views.PropertiesView">
+     </view>
+     <view
+            name="Event Monitor"
+            allowMultiple="false"
+            icon="icons/event.gif"
+            class="org.a11y.utils.accprobe.views.EventMonitorView"
+            id="org.a11y.utils.accprobe.views.EventMonitorView">
+     </view>
+   </extension>
+   
+   
+   <!-- Accelerator Keys for commands -->		
+   <extension point="org.eclipse.ui.bindings">
+      
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+X">
+      </key>
+   </extension>
+ 
+ <!-- Product Definition -->
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      	<product
+            application="org.a11y.utils.accprobe.application"
+            name="Accessibility Probe">
+            <property name="preferenceCustomization" value="plugin_customization.ini"/>
+            <property
+                  name="aboutImage"
+                  value="product_lg.gif"/>
+            <property
+                  name="aboutText"
+                  value="%aboutText"/>
+            <property
+                  name="appName"
+                  value="Accessibility Probe">
+            </property>
+		</product>
+   </extension>
+   
+   <!-- View Actions -->
+<extension point="org.eclipse.ui.viewActions">
+   <!-- Explorer View Toolbar -->
+      <viewContribution
+            targetID="org.a11y.utils.accprobe.views.ExplorerView"
+            id="org.a11y.utils.accprobe.ExplorerViewToolbarContribution">
+         
+          <action
+               toolbarPath="additions"
+               label="Read &amp;Windows desktop"
+               tooltip="Read desktop windows"
+               icon="icons/refresh.gif"
+               class="org.a11y.utils.accprobe.actions.ReadDesktopAction"
+               id="org.a11y.utils.accprobe.actions.ReadDesktopAction">
+         </action>
+          <action
+               toolbarPath="additions"
+               label="Collapse &amp;All"
+               tooltip="Collapse All"
+               icon="icons/collapseall.gif"
+               class="org.a11y.utils.accprobe.actions.CollapseAllAction"
+               id="org.a11y.utils.accprobe.actions.collapseAllAction">
+         </action>
+         <action
+               toolbarPath="additions"
+               label="&amp;Enable expansion while tracking"
+               tooltip="Enable tree expansion while tracking"
+               icon="icons/expand.gif"
+               class="org.a11y.utils.accprobe.actions.ExpandWithTrackingAction"
+               id="org.a11y.utils.accprobe.actions.ExpandWithTrackingAction"
+               state="false"
+               style="toggle">
+         </action>
+      </viewContribution>
+      
+      <!-- Properties View Toolbar -->
+      <viewContribution
+            targetID="org.a11y.utils.accprobe.views.PropertiesView"
+            id="org.a11y.utils.accprobe.PropertiesViewToolbarContribution">
+ 
+         <action
+ 			toolbarPath="additions"         
+               label="&amp;Filter"
+               icon="icons/filter.gif"
+               class="org.a11y.utils.accprobe.actions.PropertiesFilterAction"
+               tooltip="Choose properties for display"
+               id="com.ibm.haac.acprobe.actions.PropertiesFilterAction">
+         </action>
+          <action
+               toolbarPath="additions"
+               label="Collapse &amp;All"
+               tooltip="Collapse All"
+               icon="icons/collapseall.gif"
+               class="org.a11y.utils.accprobe.actions.CollapseAllAction"
+               id="org.a11y.utils.accprobe.actions.collapseAllAction">
+         </action>
+      </viewContribution>
+      
+       <!-- Event View Toolbar -->
+      <viewContribution
+            targetID="org.a11y.utils.accprobe.views.EventMonitorView"
+            id="org.a11y.utils.accprobe.EventViewToolbarContribution">
+
+ 
+         <action
+ 			toolbarPath="additions"         
+               label="&amp;Clear Events"
+               icon="icons/clearLog.gif"
+               class="org.a11y.utils.accprobe.actions.ClearEventLogAction"
+               tooltip="Clear the events list"
+               id="org.a11y.utils.accprobe.actions.ClearEventsLogAction">
+         </action>
+         <action
+                class="org.a11y.utils.accprobe.actions.StopEventCaptureAction"
+                icon="icons/stop.gif"
+                id="org.a11y.utils.accprobe.actions.StopEventCaptureAction"
+                label="St&amp;op"
+                toolbarPath="additions"
+                tooltip="Stop capture of events">
+         </action>
+         <action
+               class="org.a11y.utils.accprobe.actions.StartEventCaptureAction"
+               icon="icons/start.gif"
+               id="org.a11y.utils.accprobe.actions.StartEventCaptureAction"
+               label="&amp;Start"
+               toolbarPath="additions"
+               tooltip="Start capture of events">
+         </action>
+          <action
+                class="org.a11y.utils.accprobe.actions.PauseEventDisplayAction"
+                icon="icons/suspend.gif"
+                id="org.a11y.utils.accprobe.actions.PauseEventDisplayAction"
+                label="&amp;Pause"
+                toolbarPath="additions"
+                tooltip="Pause capture of events">
+         </action>
+         <action
+               class="org.a11y.utils.accprobe.actions.ResumeEventDisplayAction"
+               icon="icons/resume.gif"
+               id="org.a11y.utils.accprobe.actions.ResumeEventDisplayAction"
+               label="&amp;Resume"
+               toolbarPath="additions"
+               tooltip="Resume capture of events">
+         </action>
+         <menu
+               id="org.a11y.utils.accprobe.eventViewPulldownMenu"
+               label="Events"
+               path="additions">
+         </menu>
+         <action
+               class="org.a11y.utils.accprobe.actions.EventViewPreferencesAction"
+               id="org.a11y.utils.accprobe.actions.EventViewPreferencesAction"
+               label="Choose &amp;columns to display..."
+               menubarPath="org.a11y.utils.accprobe.eventViewPulldownMenu"
+               style="push">
+               </action>
+       <action
+       		class="org.a11y.utils.accprobe.actions.EventFilterAction"
+ 			id="org.a11y.utils.accprobe.actions.EventFilterAction"      
+            label="Choose &amp;events to watch..."
+            menubarPath="org.a11y.utils.accprobe.eventViewPulldownMenu"   
+            style="push">
+         </action>
+          <action
+                class="org.a11y.utils.accprobe.actions.SaveToFileAction"
+                id="org.a11y.utils.accprobe.actions.SaveToFileAction"
+                label="&amp;Save events to file..."
+                menubarPath="org.a11y.utils.accprobe.eventViewPulldownMenu"
+                state="false"
+                style="toggle">
+         </action>      
+          <action
+                class="org.a11y.utils.accprobe.actions.ProcessOutOfContextAction"
+                id="org.a11y.utils.accprobe.actions.ProcessOutOfContextAction"
+                label="Get &amp;out-of-context events"
+                menubarPath="org.a11y.utils.accprobe.eventViewPulldownMenu"
+                state="true"
+                style="toggle">
+         </action>
+          <action
+                class="org.a11y.utils.accprobe.actions.ProcessInContextAction"
+                id="org.a11y.utils.accprobe.actions.ProcessInContextAction"
+                label="Get &amp;in-context events"
+                menubarPath="org.a11y.utils.accprobe.eventViewPulldownMenu"
+                state="false"
+                style="toggle">
+         </action>
+          <action
+                class="org.a11y.utils.accprobe.actions.GlobalEventMonitoringAction"
+                id="org.a11y.utils.accprobe.actions.GlobalEventMonitoringAction"
+                label="&amp;Monitor all processes"
+                menubarPath="org.a11y.utils.accprobe.eventViewPulldownMenu"
+                state="true"
+                style="toggle">
+         </action>
+      </viewContribution>
+</extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+     <!-- Explorer View context menu items  -->   
+      <objectContribution
+            objectClass="org.a11y.utils.accprobe.providers.ExplorerViewNode"
+            id="org.a11y.utils.accprobe.ExplorerPopupContribution">
+      </objectContribution>
+
+
+     <!-- Properties View context menu items  -->   
+      <objectContribution
+            objectClass="java.util.Map$Entry"
+            id="org.a11y.utils.accprobe.propertiesPopupContribution">
+           <action
+               label="&amp;Invoke method"
+               class="org.a11y.utils.accprobe.actions.MethodInvocationAction"
+               id="org.a11y.utils.accprobe.actions.methodInvocationAction"
+               menubarPath="additions"
+               enablesFor="1">
+           </action>
+           <action
+               label="&amp;Refresh"
+               class="org.a11y.utils.accprobe.actions.RefreshPropertyAction"
+               id="org.a11y.utils.accprobe.actions.RefreshPropertyAction"
+               menubarPath="additions"
+               enablesFor="1">
+           </action>
+      </objectContribution>
+      
+   </extension>
+   
+    
+</plugin>

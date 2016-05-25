@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.a11y.utils.accprobe.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.a11y.utils.accprobe.core" id="nodeFilters" name="nodeFilters"/>
+      </appinfo>
+      <documentation>
+         Defines nodes to be ignored during traversals of models under operations like search, or validation.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  point extended always org.a11y.utils.accprobe.core.model.modelTypes
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="filter">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="model"/>
+         </appinfo>
+         <documentation>
+            nodes to be ignored during traversals (eg. search, validation)
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="model" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Model to which this filter applies.  It must match the id of the model specifed in the model extension.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="nodenames" type="string">
+            <annotation>
+               <documentation>
+                  Comma delimited nodename list.  If this is specified, class will be ignored.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="nodeids" type="string">
+            <annotation>
+               <documentation>
+                  Space delimited nodeid list specified as regular expressions.
+
+ If this is specified, class will be ignored.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="nodetypes" type="string">
+            <annotation>
+               <documentation>
+                  Space delimited list of regular expressions denoting types to filter.  
+
+For example, for Swing this list might look like this:
+.+\.metal\..+ .+\.plaf\..+ .+\.CellRendererPane .+\$Filler
+
+If this is specified, class will be ignored.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string">
+            <annotation>
+               <documentation>
+                  Implementation of org.a11y.utils.accprobe.core.model.traverse.filters.INodeFilter.  If this is specified, nodenames and nodeids will be ignored,
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.a11y.utils.accprobe.core.model.traverse.filters.INodeFilter"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [&lt;extension point=&quot;org.a11y.utils.accprobe.core.model.nodeFilters&quot;&gt;
+    &lt;filter &lt;!-- nodes to be ignored during traversals (eg search, validation)
+--&gt;
+        nodenames=&quot;space_delimited_nodename_list&quot; &lt;!-- (optional) --&gt;
+        nodeids=&quot;space_delimited_nodeid_list&quot; &lt;!-- (optional) --&gt;
+        class=&quot;node_filter_implementation&quot; &lt;!-- implementation of
+org.a11y.utils.accprobe.core.model.traverse.filters.INodeFilter (optional) --&gt;
+    &lt;/filter&gt;  &lt;!-- min=0, max=unbounded; may revisit this structure --&gt;
+&lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiInfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

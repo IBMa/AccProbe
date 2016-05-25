@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<fragment>
+
+   
+   
+   <extension point="org.a11y.utils.accprobe.accservice.accservices">
+      <accservice
+            class="org.a11y.utils.accprobe.accservice.core.win32.msaa.MsaaAccessibilityService"
+            id="org.a11y.utils.accprobe.MsaaAccessibilityService"
+            name="msaa">
+      </accservice>
+   </extension>
+   <extension
+         point="org.a11y.utils.accprobe.core.modelTypes">
+      <model
+            basetype="org.a11y.utils.accprobe.accservice.core.win32.msaa.MsaaAccessible"
+            class="org.a11y.utils.accprobe.accservice.core.win32.msaa.MsaaGuiModel"
+            id="org.a11y.utils.accprobe.accservice.win32.msaa"
+            name="msaa">
+      </model>
+   </extension>
+   <extension
+         point="org.a11y.utils.accprobe.core.nodeFilters">
+      <filter
+            model="msaa"
+            nodenames="scrollBar, titleBar, grip">
+      </filter>
+   </extension>
+
+</fragment>
