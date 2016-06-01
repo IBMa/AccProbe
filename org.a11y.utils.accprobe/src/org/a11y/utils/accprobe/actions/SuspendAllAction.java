@@ -50,7 +50,7 @@ public class SuspendAllAction extends Action{
 		if (accService != null && accService instanceof MsaaAccessibilityService) {
 			MsaaWindowService msaaService = (MsaaWindowService) accService.getWindowService();
 			if(alwaysOnTop == true){
-				msaaService.setWindowOnTop(window.getShell().handle);
+				msaaService.setWindowOnTop((int)window.getShell().handle);
 			}
 		}
 	}
@@ -65,7 +65,7 @@ public class SuspendAllAction extends Action{
 			MsaaWindowService msaaService = (MsaaWindowService) accService.getWindowService();
 			if(msaaService.isAlwaysonTop()){
 				alwaysOnTop = true;
-				msaaService.setWindowNoTop(window.getShell().handle);
+				msaaService.setWindowNoTop((int)window.getShell().handle);
 			}
 		}
 	}

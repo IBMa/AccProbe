@@ -169,7 +169,7 @@ public class DefaultModelFactory implements IModelFactory
 	public IModel resolveModel (Class<?> type) {
 		String[] modelTypes = _config.getModelTypes();
 		IModel model = null;
-		List<Class> classes = new LinkedList<Class>();
+		List<Class<?>> classes = new LinkedList<Class<?>>();
 		
 		classes.add(type);
 		classes.addAll(Arrays.asList(type.getInterfaces()));
@@ -182,7 +182,7 @@ public class DefaultModelFactory implements IModelFactory
 			if (baseType != null && baseType.length() > 0) {
 				try {
 					Class<?> baseCls = Class.forName(baseType, false, type.getClassLoader());
-					for (Iterator<Class> iter = classes.iterator(); iter.hasNext();) {
+					for (Iterator<Class<?>> iter = classes.iterator(); iter.hasNext();) {
 						if (baseCls.isAssignableFrom(iter.next())) {
 							model = resolveModel(modelTypes[a]);
 							break OUTER;

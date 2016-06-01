@@ -53,9 +53,9 @@ public class AlwaysOnTopAction extends Action
 		if (accService != null && accService instanceof MsaaAccessibilityService) {
 			MsaaWindowService msaaService = (MsaaWindowService) accService.getWindowService();
 			if (isChecked()) {
-				msaaService.setWindowOnTop(window.getShell().handle);
+				msaaService.setWindowOnTop((int)window.getShell().handle);
 			}else {
-				msaaService.setWindowNoTop(window.getShell().handle);
+				msaaService.setWindowNoTop((int)window.getShell().handle);
 			}
 		}
 	}

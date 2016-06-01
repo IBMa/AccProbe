@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>a11y-ia2</ProjectName>
+    <ProjectGuid>{25985A46-8B96-455B-A393-01AE3EADEA5C}</ProjectGuid>
+    <RootNamespace>a11yia2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\Java70\include;C:\Program Files\IBM\Java70\include\win32;C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;A11YIA2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>oleacc.lib;a11y-msaa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\Java70\include;C:\Program Files\IBM\Java70\include\win32;C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;A11YIA2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>oleacc.lib;a11y-msaa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\Java70\include;C:\Program Files\IBM\Java70\include\win32;C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;A11YIA2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>oleacc.lib;a11y-msaa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\Java70\include;C:\Program Files\IBM\Java70\include\win32;C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;A11YIA2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>oleacc.lib;a11y-msaa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Tom\Dev\ECS\RAD9-Dev-2.0\org.a11y.utils.accprobe.accservice.win32.msaa-fragment\bin-src\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CAccessible2.cpp" />
+    <ClCompile Include="ia2_api_all_i.c" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2Accessible.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleAction.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleApplication.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleComponent.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleEditableText.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleHyperlink.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleHypertext.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleImage.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleTable.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleText.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleValue.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IAccessibleTable2.cpp" />
+    <ClCompile Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IAccessibleTableCell.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAccessible2.h" />
+    <ClInclude Include="ia2_api_all.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2Accessible.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleAction.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleApplication.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleComponent.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleEditableText.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleHyperlink.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleHypertext.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleImage.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleTable.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleText.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IA2AccessibleValue.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IAccessibleTable2.h" />
+    <ClInclude Include="org_a11y_utils_accprobe_accservice_core_win32_ia2_IAccessibleTableCell.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="ia2_api_all.idl">
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).h</HeaderFileName>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).h</HeaderFileName>
+    </Midl>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
