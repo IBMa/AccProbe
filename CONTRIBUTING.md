@@ -1,8 +1,8 @@
 ### Welcome
 
-We welcome contributions to the XXX Project in many forms, and there's always plenty to do!
+We welcome contributions to the AccProbe Project in many forms, and there's always plenty to do!
 
-First things first, please review the XXX Project's [Code of Conduct](https://github.com/hyperledger/hyperledger/wiki/Hyperledger-Project-Code-of-Conduct) before participating. It is important that we keep things civil. \[TODO] create/derive code of conduct
+First things first, please review the AccProbe Project's [Code of Conduct](CONDUCT.md) before participating. It is important that we keep things civil. \[TODO] create/derive code of conduct
 
 ### Getting help
 If you are looking for something to work on, or need some expert assistance in debugging a problem or working out a fix to an issue, our community is always eager to help. We hang out on [Slack](https://XXX.slack.com/), IRC (#XXX on freenode.net) and the [mailing lists](http://example.com/). \[TODO] create mailing list
