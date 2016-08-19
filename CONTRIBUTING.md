@@ -48,10 +48,12 @@ To work on something, whether a new feature or a bugfix:
 
    _Note: if your PR does not merge cleanly, use ```git rebase master``` in your feature branch to update your pull request rather than using ```git merge master```_.
 
- <!---There are currently no tests associated with AccProbe nor any coding standards published. Commenting out these sections @moekraft
+ <!--- 
+ There are currently no tests associated with AccProbe nor any coding standards published. Commenting out these sections 
  8. Did we mention tests? All code changes should be accompanied by new or modified tests.
 
-  9. Continuous Integration (CI): Be sure to check [Travis](https://travis-ci.org/) or the Slack [#ci-status](https://XXX.slack.com/messages/ci-status) channel for status of your build. --->
+  9. Continuous Integration (CI): Be sure to check [Travis](https://travis-ci.org/) or the Slack [#ci-status](https://XXX.slack.com/messages/ci-status) channel for status of your build. 
+  -->
 
   8. Any code changes that affect documentation should be accompanied by corresponding changes (or additions) to the documentation. This will ensure that if the merged PR is reversed, all traces of the change will be reversed as well.
 
