@@ -48,17 +48,20 @@ To work on something, whether a new feature or a bugfix:
 
    _Note: if your PR does not merge cleanly, use ```git rebase master``` in your feature branch to update your pull request rather than using ```git merge master```_.
 
-  8. Did we mention tests? All code changes should be accompanied by new or modified tests.
+ <!---There are currently no tests associated with AccProbe nor any coding standards published. Commenting out these sections @moekraft
+ 8. Did we mention tests? All code changes should be accompanied by new or modified tests.
 
-  9. Continuous Integration (CI): Be sure to check [Travis](https://travis-ci.org/) or the Slack [#ci-status](https://XXX.slack.com/messages/ci-status) channel for status of your build.
+  9. Continuous Integration (CI): Be sure to check [Travis](https://travis-ci.org/) or the Slack [#ci-status](https://XXX.slack.com/messages/ci-status) channel for status of your build. --->
 
-  10. Any code changes that affect documentation should be accompanied by corresponding changes (or additions) to the documentation and tests. This will ensure that if the merged PR is reversed, all traces of the change will be reversed as well.
+  8. Any code changes that affect documentation should be accompanied by corresponding changes (or additions) to the documentation. This will ensure that if the merged PR is reversed, all traces of the change will be reversed as well.
 
 After your Pull Request (PR) has been reviewed and signed off, a maintainer will merge it into the master branch.
 
-## Coding guidelines
+<!---There are currently no coding guidelines published for AccProbe
+## Coding guidelines 
 
 \[TODO] document your project's coding conventions and guidelines
+--->
 
 ### Becoming a maintainer
 Projects or sub-projects will be lead by a set of maintainers. New projects can designate an initial set of maintainers that will be approved by the Technical Steering Committee when the project is first approved. The project's maintainers will, from time-to-time, consider adding a new maintainer. An existing maintainer will post a pull request to the [MAINTAINERS.txt](MAINTAINERS.txt) file. If a majority of the maintainers concur in the comments, the pull request is then merged and the individual becomes a maintainer.
