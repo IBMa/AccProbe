@@ -59,8 +59,9 @@ After your Pull Request (PR) has been reviewed and signed off, a maintainer will
 \[TODO] document your project's coding conventions and guidelines
 --->
 
-### Becoming a maintainer
+<!---Becoming a maintainer - currently not maintaining a set of maintainers. : )
 Projects or sub-projects will be lead by a set of maintainers. New projects can designate an initial set of maintainers that will be approved by the Technical Steering Committee when the project is first approved. The project's maintainers will, from time-to-time, consider adding a new maintainer. An existing maintainer will post a pull request to the [MAINTAINERS.txt](MAINTAINERS.txt) file. If a majority of the maintainers concur in the comments, the pull request is then merged and the individual becomes a maintainer.
+--->
 
 ### Legal stuff
 We have tried to make it as easy as possible to make contributions. This applies to how we handle the legal aspects of contribution. We use the same approach&mdash;the [Developer's Certificate of Origin 1.1 (DCO)](DCO1.1.txt)&mdash;that the Linux&reg; Kernel [community](http://elinux.org/Developer_Certificate_Of_Origin) uses to manage code contributions.
