@@ -44,9 +44,9 @@ To work on something, whether a new feature or a bugfix:
 
   8. Any code changes that affect documentation should be accompanied by corresponding changes (or additions) to the documentation. This will ensure that if the merged PR is reversed, all traces of the change will be reversed as well.
 
-Note: Many of these steps can be achieved simply through the use of the [GitHub Desktop for Windows](https://desktop.github.com/).
-
 After your Pull Request (PR) has been reviewed and signed off, a maintainer will merge it into the master branch.
+
+Note: Many of these steps can be achieved simply through the use of the [GitHub Desktop for Windows](https://desktop.github.com/).
 
 <!---There are currently no tests or coding guidelines published for AccProbe
 ## Coding guidelines 
