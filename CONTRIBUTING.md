@@ -25,7 +25,7 @@ To work on something, whether a new feature or a bugfix:
   
   4. Create a branch:
 
-  Create a descriptively-named [branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) off of your cloned fork ([more detail here](https://help.github.com/articles/syncing-a-fork/))
+  Create a descriptively-named [branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) off of your cloned fork ([See Syncing a Fork for more details](https://help.github.com/articles/syncing-a-fork/))
   
   5. Commit your code
 
