@@ -19,24 +19,17 @@ We are using the [GitHub Flow](https://guides.github.com/introduction/flow/) pro
 To work on something, whether a new feature or a bugfix:
   1. Create a [fork](https://help.github.com/articles/fork-a-repo/) (if you haven't already)
 
-  2. Clone it locally
-  ```
-  git clone https://github.com/yourid/REPO.git
-  ```
-  3. Add the upstream repository as a remote
-  ```
-  git remote add upstream https://github.com/ORG/REPO.git
-  ```
-  4. Create a branch
+  2. [Clone](https://help.github.com/articles/cloning-a-repository/) it locally
+  
+  3. [Add the upstream repository as a remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
+  
+  4. Create a branch:
 
-  Create a descriptively-named branch off of your cloned fork ([more detail here](https://help.github.com/articles/syncing-a-fork/))
-  ```
-  cd fabric
-  git checkout -b issue-nnnn
-  ```
+  Create a descriptively-named [branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) off of your cloned fork ([more detail here](https://help.github.com/articles/syncing-a-fork/))
+  
   5. Commit your code
 
-  Commit to that branch locally, and regularly push your work to the same branch on the server.
+  [Commit](https://help.github.com/articles/github-glossary/#commit) to that branch locally, and regularly push your work to the same branch on the server.
 
   6. Commit messages
 
@@ -44,12 +37,14 @@ To work on something, whether a new feature or a bugfix:
 
   7. Pull Request (PR)
 
-  When you need feedback or help, or you think the branch is ready for merging, open a pull request (make sure you have first successfully built and tested your changes.
+  When you need feedback or help, or you think the branch is ready for merging, [open a pull request](https://help.github.com/articles/creating-a-pull-request/) (make sure you have first successfully built and tested your changes.
 
    _Note: if your PR does not merge cleanly, use ```git rebase master``` in your feature branch to update your pull request rather than using ```git merge master```_.
 
 
   8. Any code changes that affect documentation should be accompanied by corresponding changes (or additions) to the documentation. This will ensure that if the merged PR is reversed, all traces of the change will be reversed as well.
+
+Note: Many of these steps can be achieved simply through the use of the [GitHub Desktop for Windows](https://desktop.github.com/).
 
 After your Pull Request (PR) has been reviewed and signed off, a maintainer will merge it into the master branch.
 
