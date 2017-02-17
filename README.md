@@ -59,7 +59,7 @@ Please check your eclipse plugins directory if these bundles exist before downlo
 
 ##License
 
-Copyright (c) 2007, 2010 IBM Corporation
+Copyright (c) 2007, 2010, 2017 IBM Corporation
 Copyright (c) 2010 Linux Foundation
 
 All rights reserved.
