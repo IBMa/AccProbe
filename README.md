@@ -1,6 +1,7 @@
 # AccProbe: The Accessibility Probe
 
 ##Overview
+###64-bit
 
 The **Accessibility Probe (AccProbe)** is a standalone, Eclipse Rich-Client Product (RCP) application that provides a view of the [Microsoft Active Accessibility (MSAA)](http://msdn2.microsoft.com/en-us/library/ms697707.aspx) or [IAccessible2](http://a11y.org/ia2) hierarchy of a currently running application or rendered document and of the properties of the accessible objects of that application or document. It can also serve as an event monitor for tracking the events fired by these accessible objects. It is meant to combine the functionality of tools like Microsoft's Inspect32, AccExplore, and AccEvent into one easy-to-use application for accessibility testing and debugging.
 
@@ -58,7 +59,7 @@ Please check your eclipse plugins directory if these bundles exist before downlo
 
 ##License
 
-Copyright (c) 2007, 2010 IBM Corporation
+Copyright (c) 2007, 2010, 2017 IBM Corporation
 Copyright (c) 2010 Linux Foundation
 
 All rights reserved.
