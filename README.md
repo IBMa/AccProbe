@@ -37,7 +37,7 @@ There are several steps for building **AccProbe**, depending upon whether or not
         * org.a11y.utils.accprobe
         * org.a11y.utils.accprobe-feature
 
-* Open ```/org.a11y.utils.accprobe/accprobe.product``` in product configuration editor and go to ```Dependencies``` tab. Make sure ```org.eclipse.rcp``` bundle version matches with the one in your plugins directory. If not, remove ```org.eclipse.rcp``` from ```dependencies``` and click Add and type ```org.eclipse.rcp``` in feature selection dialog and select the appropriate bundle.
+* Open ```/org.a11y.utils.accprobe/accprobe.product``` in product configuration editor and go to ```Contents``` tab. Make sure ```org.eclipse.rcp``` bundle version matches with the one in your plugins directory. If not, remove ```org.eclipse.rcp``` from ```dependencies``` and click Add and type ```org.eclipse.rcp``` in feature selection dialog and select the appropriate bundle.
 
 * You will also need the following bundles from the [Orbit project](http://www.eclipse.org/orbit) for an IDE build:
     * org.apache.commons.beanutils
