@@ -1,11 +1,12 @@
 # AccProbe: The Accessibility Probe
 
-##Overview
-###32-bit
+## Overview
+
+### 32-bit
 
 The **Accessibility Probe (AccProbe)** is a standalone, Eclipse Rich-Client Product (RCP) application that provides a view of the [Microsoft Active Accessibility (MSAA)](http://msdn2.microsoft.com/en-us/library/ms697707.aspx) or [IAccessible2](http://a11y.org/ia2) hierarchy of a currently running application or rendered document and of the properties of the accessible objects of that application or document. It can also serve as an event monitor for tracking the events fired by these accessible objects. It is meant to combine the functionality of tools like Microsoft's Inspect32, AccExplore, and AccEvent into one easy-to-use application for accessibility testing and debugging.
 
-##Getting Started
+## Getting Started
 
 Since **AccProbe** is an Eclipse RCP application, ease of use has been a primary objective. Simply unpack the archive you chose to download above to a directory of your choosing. A top-level ```accprobe``` directory will be created for you. Within this directory, run ```accprobe.exe``` and you're off! For more detailed instructions and using **AccProbe**, consult the *User's Guide*, also found in the ```accprobe``` directory.
 
@@ -23,7 +24,7 @@ For example:
 regsvr32 C:/accprobe1.2/accprobe/plugins/org.a11y.utils.accprobe.accservice.win32.ia2_1.2.0/IAccessible2Proxy.dll.
 ```
 
-##Building AccProbe
+## Building AccProbe
 
 There are several steps for building **AccProbe**, depending upon whether or not you wish to build the requisite DLLs:
 
@@ -57,7 +58,7 @@ Please check your eclipse plugins directory if these bundles exist before downlo
 * [build the IAccessible2Proxy.dll](http://www.linux-foundation.org/en/Accessibility/IAccessible2/ComProxyDLL) (optional)
 * [build the MSAA- and IAccessible2-specific dlls for AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/buildingAccprobeDlls.html) (optional)
 
-##License
+## License
 
 Copyright (c) 2007, 2010, 2017 IBM Corporation
 Copyright (c) 2010 Linux Foundation
